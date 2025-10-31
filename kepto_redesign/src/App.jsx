@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import CursorFollower from "./components/effects/CursorFollower";
 import LoadingScreen from "./components/effects/LoadingScreen";
@@ -12,14 +12,21 @@ import PaymentSolution from "./components/sections/PaymentSolution";
 import WhyChooseUs from "./components/sections/WhyChooseUs";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
+import ContactUs from "./components/pages/ContactUs";
 
 const App = () => {
+  const location = useLocation();
+  const hideCursor = location.pathname === "/contact";
+
   return (
-    <Router>
+    <>
       <LoadingScreen />
-      <div className="hidden xl:block">
-        <CursorFollower />
-      </div>
+
+      {!hideCursor && (
+        <div className="hidden xl:block">
+          <CursorFollower />
+        </div>
+      )}
 
       <Routes>
         <Route
@@ -36,11 +43,11 @@ const App = () => {
             </>
           }
         />
-
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
-    </Router>
+    </>
   );
 };
 
