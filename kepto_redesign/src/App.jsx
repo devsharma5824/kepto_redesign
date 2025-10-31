@@ -13,6 +13,7 @@ import WhyChooseUs from "./components/sections/WhyChooseUs";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import ContactUs from "./components/pages/ContactUs";
+import ScrollToTop from "./components/utils/ScrollToTop";
 
 const App = () => {
   const location = useLocation();
@@ -27,6 +28,8 @@ const App = () => {
           <CursorFollower />
         </div>
       )}
+
+      <ScrollToTop />
 
       <Routes>
         <Route
