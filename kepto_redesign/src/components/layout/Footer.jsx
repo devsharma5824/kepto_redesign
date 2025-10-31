@@ -3,6 +3,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -14,7 +15,6 @@ const Footer = () => {
         className="relative flex flex-col justify-center items-center w-full py-10 md:pb-10 md:pt-16 mx-auto rounded-t-4xl overflow-hidden"
       >
         <div className="max-w-8xl mx-auto px-6 ">
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
             {/* Company */}
             <div>
@@ -32,9 +32,12 @@ const Footer = () => {
                 <a href="#!" className="hover:text-purple-300 transition">
                   Privacy Policy
                 </a>
-                <a href="#!" className="hover:text-purple-300 transition">
+                <Link
+                  to="/contact"
+                  className="hover:text-purple-300 transition"
+                >
                   Contact Us
-                </a>
+                </Link>
               </div>
             </div>
 
